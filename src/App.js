@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import BikeData from "./bikeData";
 import BikeList from './components/BikeList/BikeList';
-
+import BrandList from './components/BrandList/BrandList';
 
 class App extends Component {
   state = {
@@ -21,7 +21,10 @@ class App extends Component {
   render() {
     return (
       <div id="appWrapper">
-        <h2 id="mainTitle">Bike Stock</h2>
+        <div id="title">
+          <h2 id="mainTitle">Bike Stock</h2>
+          <BrandList bikes={this.state.bikeData}/>
+        </div>
         <div id="bikeList">
           <BikeList bikes={this.state.bikeData} />      
         </div>

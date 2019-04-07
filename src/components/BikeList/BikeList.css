@@ -8,11 +8,18 @@ div#bikeList {
 @media only screen and (min-width: 600px) {
   div#bikeList {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  div#bikeList {
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1100px) {
   div#bikeList {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

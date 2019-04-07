@@ -1,6 +1,6 @@
 import React from 'react';
 import "./BikeCard.css";
-import ColorList from "./ColorList";
+import ColorList from "./ColorList/ColorList";
 
 export default function BikeCard({info}) {
   return (

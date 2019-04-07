@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Loading() {
-  return <div className="loader"><center>Loading...</center></div>
+function Loading(props) {
+  return <div className="loader" style={{...props.style}}><center>Loading...</center></div>
 }
 
 export default Loading;
