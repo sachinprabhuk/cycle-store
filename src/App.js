@@ -1,25 +1,30 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import BikeData from "./bikeData";
+import BikeList from './components/BikeList/BikeList';
+
 
 class App extends Component {
+  state = {
+    bikeData: [],
+  };
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        fetching: false,
+        bikeData: BikeData
+      });
+    }, 500);
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div id="appWrapper">
+        <h2 id="mainTitle">Bike Stock</h2>
+        <div id="bikeList">
+          <BikeList bikes={this.state.bikeData} />      
+        </div>
       </div>
     );
   }

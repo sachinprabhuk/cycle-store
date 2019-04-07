@@ -1,0 +1,60 @@
+.bikeCard span.colorDiv {
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.bikeCard {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0px 0px 6px rgba(210, 210, 210, 0.7);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.bikeCard:hover {
+  box-shadow: 0px 0px 10px rgba(210, 210, 210, 1);
+}
+
+.bikeCard .imageSecion {
+  margin-bottom: 20px;
+}
+
+.bikeCard .infoSection button {
+  color: rgb(141, 3, 3);
+  padding: 10px 16px;
+  border: 1px solid rgb(141, 3, 3);
+  background-color: white;
+  cursor: pointer;
+  transition: background 0.1s ease-in-out;
+}
+
+.bikeCard .infoSection button:hover {
+  color: white;
+  background-color: rgb(141, 3, 3);
+}
+
+
+.bikeCard .infoSection .specWrapper {
+  border: 1px solid rgb(200, 200, 200);
+  margin: 8px 0px;
+  padding: 6px 18px;
+}
+
+.bikeCard .infoSection .specWrapper p {
+  border-bottom: 1px solid rgb(200, 200, 200);
+  font-size: 1rem;
+  padding: 12px 0px 6px 0px;
+  margin-bottom: 8px;   
+}
+
+.bikeCard .brandName {
+  font-size: 1.5rem;
+}
+
+.bikeCard .bikeName {
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+}
