@@ -23,8 +23,8 @@ export default function BrandList(props) {
     )
   }
   return (
-    <div style={{marginTop: "6px"}}>
-      <span style={{letterSpacing: "3px"}}>Bikes we carry -</span> {toDisplay}
+    <div style={{marginTop: "6px", letterSpacing: "3px"}}>
+      Bikes we carry - {toDisplay}
     </div>
   )
 }

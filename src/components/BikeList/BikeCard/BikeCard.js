@@ -15,9 +15,8 @@ export default function BikeCard({info}) {
         <div className="specWrapper">
           <p><i>Price</i> - ${info.price}</p>
           <p><i>Colors</i> - <ColorList colors={info.colors} id={info.bikeID}/></p>
-          <p><i>In stock</i> - {info.stock}</p>
+          <p><i>In stock</i> - {info.stock ? info.stock : "No"}</p>
           <center><button>FULL SPECS</button></center>
-
         </div>
       </div>
     </div>

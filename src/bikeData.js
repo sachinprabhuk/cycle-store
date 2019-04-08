@@ -16,7 +16,7 @@ const bikeList = [
     bikeName: "cardinal",
     price: 400,
     colors: ["#FFF5B5", "orange"],
-    stock: 79
+    stock: 0
   },
   {
     bikeID: 3,
@@ -54,9 +54,6 @@ const bikeList = [
   },
   
 ]
-
-
-
 
 
 
