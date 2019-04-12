@@ -3,7 +3,6 @@ import "./AddBikeForm.css";
 import { inject } from 'mobx-react';
 
 
-@inject("bikeStore")
 class AddBikeForm extends Component {
   state = {
     imgSrc: "",
@@ -12,13 +11,12 @@ class AddBikeForm extends Component {
     price: 0,
     stock: 0
   }
-  constructor(props) {
-    super(props);
-    console.log(props.bikeStore);
-  }
   onsubmit = e => {
     e.preventDefault();
-    // this.props.onSubmit(this.state);
+    this.props.bikeStore.addBike({...this.state});
+    this.setState({
+      imgSrc: "", brandName: "", bikeName: "", price: "", stock: ""
+    });
   }
   onInput = e => {
     this.setState({ [e.target.name]: e.target.value })
@@ -26,7 +24,7 @@ class AddBikeForm extends Component {
   render() {
     return (
       <form onSubmit={this.onsubmit} >
-        <h3>Add Bike</h3>
+        <h3>Add Bike information</h3>
         <input type="text" placeholder="image src" 
         name="imgSrc" value={this.state.imgSrc} onChange={this.onInput} />
         <br />
@@ -48,4 +46,4 @@ class AddBikeForm extends Component {
   }
 }
 
-export default AddBikeForm;
+export default inject("bikeStore")(AddBikeForm);

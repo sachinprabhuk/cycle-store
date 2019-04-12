@@ -1,8 +1,8 @@
-import { observable, action } from 'mobx';
+import { observable, action, decorate } from 'mobx';
 
 class bikeStore {
-  id = 1
-  @observable 
+  id = 2
+
   bikeList = [
     {
       bikeID: 1,
@@ -12,21 +12,10 @@ class bikeStore {
       price: 400,
       colors: ["#B2A23c"],
       stock: 88
-    },
-    {
-      bikeID: 2,
-      imgSrc: "/images/cycle_sample.png",
-      brandName: "State",
-      bikeName: "cardinal",
-      price: 400,
-      colors: ["#FFF5B5", "orange"],
-      stock: 0
     }
   ];
   
-  @action
-  addBike({ imgSrc , brandName, bikeName, price, stock }) {
-    console.log(this);
+  addBike = ({ imgSrc , brandName, bikeName, price, stock }) => {
     this.bikeList.push({
       bikeID: this.id++,
       imgSrc: imgSrc || "/images/cycle_sample.png",
@@ -36,8 +25,14 @@ class bikeStore {
       colors: ["#B2A23c"],
       stock
     }) 
+    console.log(this.bikeList);
   }
 };
+
+decorate(bikeStore, {
+  addBike: action,
+  bikeList: observable
+})
 
 const storeInstance = new bikeStore();
 export default storeInstance;
