@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import "./AddBikeForm.css";
-import { inject } from 'mobx-react';
+import { BikeContext } from '../../contexts/BikeContext';
 
-
-@inject("bikeStore")
 class AddBikeForm extends Component {
   state = {
     imgSrc: "",
@@ -12,37 +10,49 @@ class AddBikeForm extends Component {
     price: 0,
     stock: 0
   }
-  constructor(props) {
-    super(props);
-    console.log(props.bikeStore);
+  static contextType = BikeContext;
+  onInput = e => {
+    this.setState({ [e.target.name]: e.target.value })
   }
   onsubmit = e => {
     e.preventDefault();
-    // this.props.onSubmit(this.state);
-  }
-  onInput = e => {
-    this.setState({ [e.target.name]: e.target.value })
+    this.context.addBike({...this.state});
   }
   render() {
     return (
       <form onSubmit={this.onsubmit} >
-        <h3>Add Bike</h3>
-        <input type="text" placeholder="image src" 
-        name="imgSrc" value={this.state.imgSrc} onChange={this.onInput} />
+        <h3 style={{ marginBottom: "16px"}}>Add bike info</h3>
+        
+        <label for="imgSrc">Image source</label><br />
+        <input type="text" name="imgSrc" id="imgSrc"
+        value={this.state.imgSrc} onChange={this.onInput}
+        required />
+        <br /><br />
+        
+        <label for="bikeName">Bike Name</label><br />
+        <input type="text" name="bikeName"  
+        value={this.state.bikeName} onChange={this.onInput}
+        required/>
+        <br /><br />
+        
+        <label for="brandName">Brand name</label><br />
+        <input type="text" id="brandName" 
+        name="brandName" value={this.state.brandName} onChange={this.onInput}
+        required/>
+        <br /><br />
+
+        <label for="price">Price</label><br />
+        <input type="number" id="price" 
+        name="price" value={this.state.price} onChange={this.onInput}
+        required/>
+        <br /><br />
+
+        <label for="stock">Stock</label><br />
+        <input type="number" id="stock" 
+        name="stock" value={this.state.stock} onChange={this.onInput}
+        required/>
         <br />
-        <input type="text" placeholder="bike name" 
-        name="bikeName" value={this.state.bikeName} onChange={this.onInput}/>
-        <br />
-        <input type="text" placeholder="brand name" 
-        name="brandName" value={this.state.brandName} onChange={this.onInput}/>
-        <br />
-        <input type="number" placeholder="Price" 
-        name="price" value={this.state.price} onChange={this.onInput}/>
-        <br />
-        <input type="number" placeholder="Stock" 
-        name="stock" value={this.state.stock} onChange={this.onInput}/>
-        <br />
-        <button>Add</button>
+        <button id="addBike">Add bike</button>
     </form>
     )
   }
