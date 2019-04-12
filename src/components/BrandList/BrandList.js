@@ -17,7 +17,7 @@ export default function BrandList(props) {
       <span style={{fontWeight: "560"}}>
         {brands.map((el, index) => <a 
         key={`brandLink${index}`}
-        href="#" 
+        href="/" 
         style={brandName}>{el}  /  </a>)}
       </span>
     )

@@ -1,0 +1,9 @@
+div#addCycleForm input {
+  margin: 5px 0px;
+  padding: 10px 10px 6px 2px;
+  border: none;
+  border-bottom: 1px solid black;
+  min-width: 250px;
+  font-size: 18px;
+  outline: none;
+}

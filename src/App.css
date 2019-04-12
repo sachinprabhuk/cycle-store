@@ -1,6 +1,12 @@
 div#appWrapper {
   width: 100%;
   padding: 10px 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+div#addCycleForm {
+  margin: 20px 0px;
 }
 
 h2#mainTitle {
@@ -36,16 +42,39 @@ div#bikeList {
   margin: 30px 0px;
 }
 
-@media only screen and (min-width: 600px) {
+/* title addCycleForm bikeList */
+@media only screen and (min-width: 1000px) {
   div#appWrapper {
-    width: 75%;
+    width: 95%;
     margin: 0px auto;
+    grid-template-columns: 70% 30%;
+  }
+  div#appWrapper div#title {
+    grid-column: 1/-1;
+  }  
+  div#appWrapper #addCycleForm {
+    grid-column: 2/3;
+    justify-self: right;
+  }
+  div#appWrapper div#bikeList {
+    grid-row: 2/3;
+    grid-column: 1/2;
   }
 }
 
-@media only screen and (min-width: 600px) {
+/* @media only screen and (min-width: 1100px) {
   div#appWrapper {
     width: 85%;
     margin: 0px auto;
+    grid-template-columns: 80% 20%;
   }
-}
+  div#appWrapper div#title {
+    grid-column: 1/-1;
+  }  
+  div#appWrapper div#addCycleForm {
+    grid-column: 2/-1;
+  }
+  div#appWrapper div#bikeList {
+    grid-column: 1/2;
+  }
+} */
