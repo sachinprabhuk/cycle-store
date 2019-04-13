@@ -26,21 +26,26 @@ class AddBikeForm extends Component {
       <form onSubmit={this.onsubmit} >
         <h3>Add Bike information</h3>
         <input type="text" placeholder="image src" 
-        name="imgSrc" value={this.state.imgSrc} onChange={this.onInput} />
+        name="imgSrc" value={this.state.imgSrc} 
+        onChange={this.onInput} required />
         <br />
         <input type="text" placeholder="bike name" 
-        name="bikeName" value={this.state.bikeName} onChange={this.onInput}/>
+        name="bikeName" value={this.state.bikeName} 
+        onChange={this.onInput} required/>
         <br />
         <input type="text" placeholder="brand name" 
-        name="brandName" value={this.state.brandName} onChange={this.onInput}/>
+        name="brandName" value={this.state.brandName} 
+        onChange={this.onInput} required/>
         <br />
         <input type="number" placeholder="Price" 
-        name="price" value={this.state.price} onChange={this.onInput}/>
+        name="price" value={this.state.price} 
+        onChange={this.onInput} required/>
         <br />
         <input type="number" placeholder="Stock" 
-        name="stock" value={this.state.stock} onChange={this.onInput}/>
-        <br />
-        <button>Add</button>
+        name="stock" value={this.state.stock} 
+        onChange={this.onInput} required/>
+        <br /><br />
+        <button id="addBikeBtn">Add Bike</button>
     </form>
     )
   }

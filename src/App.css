@@ -54,7 +54,7 @@ div#bikeList {
   }  
   div#appWrapper #addCycleForm {
     grid-column: 2/3;
-    justify-self: right;
+    justify-self: center;
   }
   div#appWrapper div#bikeList {
     grid-row: 2/3;
@@ -62,19 +62,4 @@ div#bikeList {
   }
 }
 
-/* @media only screen and (min-width: 1100px) {
-  div#appWrapper {
-    width: 85%;
-    margin: 0px auto;
-    grid-template-columns: 80% 20%;
-  }
-  div#appWrapper div#title {
-    grid-column: 1/-1;
-  }  
-  div#appWrapper div#addCycleForm {
-    grid-column: 2/-1;
-  }
-  div#appWrapper div#bikeList {
-    grid-column: 1/2;
-  }
-} */
+

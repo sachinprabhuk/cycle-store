@@ -118,7 +118,13 @@
       [
         "@babel/plugin-proposal-decorators",
         {
-          "decoratorsBeforeExport": true
+          "legacy": true
+        }
+      ],
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
         }
       ]
     ],
@@ -127,6 +133,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-decorators": "^7.4.0"
   }
 }

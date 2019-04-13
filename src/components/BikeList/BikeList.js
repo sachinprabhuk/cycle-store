@@ -7,6 +7,8 @@ import BikeCard from './BikeCard/BikeCard';
 import "./BikeList.css";
 
 
+@inject("bikeStore")
+@observer
 class BikeList extends React.Component {
   render() {
     const bikes = this.props.bikeStore.bikeList;
@@ -18,4 +20,4 @@ class BikeList extends React.Component {
 }
 
 
-export default inject("bikeStore")(observer(BikeList));
+export default BikeList;
